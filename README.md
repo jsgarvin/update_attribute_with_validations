@@ -24,18 +24,18 @@ Justification
 * `update_attributes` (plural), therefore, *cannot* be used within the application to quickly update other attributes
   that are not, and should not, be updateable via a web form.
 * We are then left with three alternatives.
-  * `attribute=value; save` which is not beautiful code. 
-  * `update_attribute(:attribute => value)` and hope we never inadvertently create an invalid object in the database.
-  * define a new method that intuitively does what we expect. But what shall we call it? I know! How about `update_attribu`... oh, shucks!
+  * `@object.attribute=value; @object.save` which is not beautiful code. 
+  * `@object.update_attribute(:attribute,value)` and hope we never inadvertently create an invalid object in the database.
+  * define a new ActiveRecord method that intuitively does what we expect. But what shall we call it? I know! How about `update_attribu`... oh, shucks!
   * "Fix" the built-in `update_attribute` method so that safe updates are easy, and unsafe updates are hard(er).
 * This gem takes the last approach.
 
 But Sometimes...
 ----------------
 
-Occasionally it is necessary to save some value regardless of whether or not the resultant object passes
-validations. Or, you just *know* that's it's safe and in your particular case there's a significant performance
-boost to be gained by skipping unnecessary validations.  
+Admittedly, it is occasionally necessary to save some value regardless of whether or not the resultant object
+passes validations. Or, you just *know* that's it's safe and in your particular case there's a significant
+performance boost to be gained by skipping unnecessary validations.  
 
 `update_attribute_without_validations(:attribute => value)` will not only get you what you need, but also comes
 with the free bonus of self documenting code.
