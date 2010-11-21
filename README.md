@@ -3,7 +3,7 @@ UpdateAttributeWithValidations
 
 Changes ActiveRecord's update_attribute (singular) method to behave more intuitively and consistently like
 update_attributes (plural). ActiveRecord's built-in update_attribute (singular) will skip validation checks
-save the record regardless, unlike update_attributes (plural), which will not.
+and save the record regardless, unlike update_attributes (plural), which will not.
 
 Installation
 ------------
@@ -20,8 +20,8 @@ Justification
 * `update_attributes` (plural), therefore, *cannot* be used within the application to quickly update other attributes
   that are not, and should not, be updateable via a web form.
 * We are then left with three alternatives.
-  * `attribute=value; save`  < This is not beautiful code. 
-  * `update_attribute(:attribute => value)` < and hope we never inadvertently create an invalid object in the database
+  * `attribute=value; save`  which This is not beautiful code. 
+  * `update_attribute(:attribute => value)` and hope we never inadvertently create an invalid object in the database.
   * define a new method that intuitively does what we expect. But what shall we call it? I know! How about `update_attribu`... oh, shucks!
   * "Fix" the built-in `update_attribute` method so that safe updates are easy, and unsafe updates are hard(er).
 * This gem takes the last approach.
