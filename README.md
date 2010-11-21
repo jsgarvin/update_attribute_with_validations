@@ -20,7 +20,7 @@ Justification
 * `update_attributes` (plural), therefore, *cannot* be used within the application to quickly update other attributes
   that are not, and should not, be updateable via a web form.
 * We are then left with three alternatives.
-  * `attribute=value; save`  < This is !beautiful code. 
+  * `attribute=value; save`  < This is not beautiful code. 
   * `update_attribute(:attribute => value)` < and hope we never inadvertently create an invalid object in the database
   * define a new method that intuitively does what we expect. But what shall we call it? I know! How about `update_attribu`... oh, shucks!
   * "Fix" the built-in `update_attribute` method so that safe updates are easy, and unsafe updates are hard(er).
@@ -41,7 +41,7 @@ It is the author's opinion, however, that this is an edge case and should not di
 Discussion
 ----------
 
-The built-in behavior of `update_attribute` has been [debated at length](http://groups.google.com/group/rubyonrails-core/browse_thread/thread/e9e9763e96af7175?hl=en&pli=1),.
+The built-in behavior of `update_attribute` has been [debated at length](http://groups.google.com/group/rubyonrails-core/browse_thread/thread/e9e9763e96af7175?hl=en&pli=1).
 The winning argument seems to primarily be that many people have code that relies on the existing behavior and do not
 want to update that code to adjust for new behavior. The author of this gem harbors no delusions of ever changing the
 core team's mind, but is unmoved by that rationale. New versions of libraries always require dependent code to be updated
