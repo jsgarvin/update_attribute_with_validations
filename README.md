@@ -37,7 +37,7 @@ Admittedly, it is occasionally necessary to save some value regardless of whethe
 passes validations. Or, you just *know* that it's safe and in your particular case there's a significant
 performance boost to be gained by skipping unnecessary validations.  
 
-`update_attribute_without_validations(:attribute => value)` will not only get you what you need, but also comes
+`update_attribute_without_validations(:attribute,value)` will not only get you what you need, but also comes
 with the free bonus of self documenting code.
 
 It is the author's opinion, however, that this is an edge case and should not dictate the default behavior.
