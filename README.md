@@ -1,16 +1,20 @@
 UpdateAttributeWithValidations
 ==============================
 
-Changes ActiveRecord's update_attribute (singular) method to behave more intuitively and consistently like
-update_attributes (plural). ActiveRecord's built-in update_attribute (singular) will skip validation checks
-and save the record regardless, unlike update_attributes (plural), which will not.
+Changes ActiveRecord's `update_attribute` (singular) method to behave more intuitively and consistently like
+`update_attributes` (plural). ActiveRecord's built-in `update_attribute` (singular) will skip validation checks
+and save the record regardless, unlike `update_attributes` (plural), which will not.
 
 Installation
 ------------
 
-Add the following to your Rails 3 Gemfile
+Add the following to your Rails 3 Gemfile:
 
-`gem 'update_attribute_with_validations'`
+``gem 'update_attribute_with_validations'``
+
+Then add the following to an `update_attribute_with_validations.rb` file in your initializers folder (or to your environment.rb):
+
+`require 'update_attribute_with_validations'`
 
 Justification
 -------------
