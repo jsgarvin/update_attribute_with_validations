@@ -26,7 +26,7 @@ Justification
 * We are then left with several alternatives.
   * `@object.attribute=value; @object.save` which is not beautiful code. 
   * `@object.update_attribute(:attribute,value)` and hope we never inadvertently create an invalid object in the database.
-  * define a new ActiveRecord method that intuitively does what we expect. But what shall we call it? I know! How about `update_attribu`... oh, shucks!
+  * define a new ActiveRecord method that intuitively does what we expect. But what to call it? How about `update_attribu`... oh, shucks!
   * "Fix" the built-in `update_attribute` method so that safe updates are easy, and unsafe updates are hard(er).
 * This gem takes the last approach.
 
@@ -34,7 +34,7 @@ But Sometimes...
 ----------------
 
 Admittedly, it is occasionally necessary to save some value regardless of whether or not the resultant object
-passes validations. Or, you just *know* that's it's safe and in your particular case there's a significant
+passes validations. Or, you just *know* that it's safe and in your particular case there's a significant
 performance boost to be gained by skipping unnecessary validations.  
 
 `update_attribute_without_validations(:attribute => value)` will not only get you what you need, but also comes
