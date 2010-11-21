@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'update_attribute_with_validations'
-  s.version = '0.1.0'
+  s.version = '0.1.1'
   s.author = 'Jonathan Garvin'
 
   s.description = <<-EOF
